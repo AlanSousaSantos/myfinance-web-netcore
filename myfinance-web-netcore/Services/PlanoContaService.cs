@@ -13,7 +13,6 @@ namespace myfinance_web_netcore.Services
 
         public PlanoContaService(MyFinanceDbContext myFinanceDbContext)
         {
-
             _myFinanceDbContext = myFinanceDbContext;
         }
 
@@ -40,11 +39,17 @@ namespace myfinance_web_netcore.Services
         public void Salvar(PlanoConta item)
         {
             var dbSet = _myFinanceDbContext.PlanoConta;
-            if(item.Id==null){
+            if (item.Id == null)
+            {
                 dbSet.Add(item);
-            }else{
+            }
+            else
+            {
                 dbSet.Attach(item);
-                _myFinanceDbContext.Entry(item).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                _myFinanceDbContext.Entry(item).State = Microsoft
+                    .EntityFrameworkCore
+                    .EntityState
+                    .Modified;
             }
             _myFinanceDbContext.SaveChanges();
         }
