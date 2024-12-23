@@ -1,0 +1,38 @@
+CREATE DATABASE myfinance;
+
+CREATE TABLE PLANOCONTA(
+	ID INT NOT NULL IDENTITY(1,1),
+	NOME VARCHAR(50) NOT NULL,
+	TIPO CHAR(1) NOT NULL,
+	PRIMARY KEY(ID)
+);
+
+CREATE TABLE TRANSACAO(ID INT NOT NULL IDENTITY(1,1),
+DATA DATETIME NOT NULL,
+VALOR DECIMAL(9,2) NOT NULL,
+HISTORICO VARCHAR(100),
+TIPO CHAR(1) NOT NULL,
+PLANOCONTAID INT NOT NULL,
+PRIMARY KEY(ID),
+FOREIGN KEY (PLANOCONTAID) REFERENCES PLANOCONTA(ID)
+);
+
+INSERT INTO PLANOCONTA(ID, NOME, TIPO)
+VALUES
+    (1, 'Combustível', 'D'),
+    (2, 'Alimentação', 'D'),
+    (3, 'Aluguel', 'D'),
+    (4, 'Água', 'D'),
+    (5, 'Luz', 'D'),
+    (6, 'Internet', 'D'),
+    (7, 'Salário', 'R'),
+    (8, 'Dividendos', 'R'),
+
+INSERT INTO TRANSACAO (ID, DATA, VALOR, HISTORICO, TIPO, PLANOCONTAID)
+VALUES
+    (1, '2024-11-23 06:03:05.3400000', 458.00, 'Gasolina do Ecosport', 'D', 1),
+    (2, '2024-11-23 06:03:05.3770000', 120.58, 'Almoço de Domingo', 'D', 2),
+    (3, '2024-11-23 06:03:05.3830000', 25.00, 'Padaria', 'D', 2),
+    (4, '2024-11-23 06:03:05.3870000', 868.32, 'Dividendos Itau', 'R', 8),
+    (5, '2024-11-23 06:03:05.3900000', 57.89, 'Dividendos Itau', 'R', 8);
+
