@@ -11,43 +11,24 @@ O sistema foi construído com **.NET Core** e um banco de dados **SQL Server**.
 
 - [Plano de Contas](#plano-de-contas)
 - [Registro de Transações](#registro-de-transações)
-- [Relatório de Transações por Período](#relatório-de-transações-por-período)
-- [Despesas e Receitas](#despesas-e-receitas)
-- [Diagrama do Banco de Dados](#diagrama-do-banco-de-dados)
 - [Como Conectar ao Banco de Dados](#como-conectar-ao-banco-de-dados)
 
 ---
 
 ## Plano de Contas
 
-![Plano de Contas](./screenshots/plano-contas.png)
+![Plano de Contas](images/myFinancePlanoDeConta.png)
 
-Gerencie suas contas categorizando receitas e despesas. Crie, edite e exclua contas conforme a necessidade.
+Gerencie suas contas categorizando receitas e despesas. 
+Crie, edite e exclua contas conforme a necessidade.
 
 ---
 
 ## Registro de Transações
 
-![Registro de Transações](./screenshots/registro-transacoes.png)
+![Registro de Transações](images/myFinanceRegistroTransacoes.png)
 
 Mantenha um histórico detalhado das suas transações financeiras, incluindo datas, valores e categorias.
-
----
-
-## Relatório de Transações por Período
-
-
-
----
-
-## Despesas e Receitas
-
-
-
----
-
-## Diagrama do Banco de Dados
-
 
 ---
 
