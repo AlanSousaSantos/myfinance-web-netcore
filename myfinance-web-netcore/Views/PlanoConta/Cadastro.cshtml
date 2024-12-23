@@ -1,33 +1,46 @@
 ﻿@model PlanoContaModel
 @{
-    ViewData["Title"] = "Cadastro de PLano de Contas";
+    ViewData["Title"] = "Cadastro de Plano de Contas";
 }
 
-<h1>@ViewData["Title"]</h1>
-
-<form asp-controller="PlanoConta" asp-action="Cadastro" method="post">
-    <div class="container">
-        <div class="mb-3">
-            <label class="form-label">Descrição</label>
-            <input type="hidden" id="txtId" class="form-control" asp-for="Id" />
-            <input type="text" id="txtNome" class="form-control" asp-for="Nome" />
-            <span asp-validation-for="Nome" class="text-danger"></span>
+<div class="container my-5">
+    <div class="card shadow-lg border-success">
+        <div class="card-header bg-success text-white">
+            <h3 class="m-0">@ViewData["Title"]</h3>
         </div>
+        <div class="card-body">
+            <form asp-controller="PlanoConta" asp-action="Cadastro" method="post">
+                <div class="mb-4">
+                    <label for="txtNome" class="form-label fw-bold text-success">Descrição</label>
+                    <input type="hidden" id="txtId" class="form-control" asp-for="Id" />
+                    <input type="text" id="txtNome" class="form-control border-success" asp-for="Nome" placeholder="Digite a descrição" />
+                    <span asp-validation-for="Nome" class="text-danger"></span>
+                </div>
 
-        <div class="mb-3">
-            <label>@Html.RadioButtonFor(m => m.Tipo, "D")Despesa</label>
-            <label>@Html.RadioButtonFor(m => m.Tipo, "R")Receita</label>
-            <span asp-validation-for="Tipo" class="text-danger"></span>
-        </div>
-        <div class="mb-3">
-            <button type="submit" class="btn btn-primary btn-lg">Salvar</button>
-            <button type="button" class="btn btn-secondary btn-lg" onclick="Voltar()">Cancelar</button>
+                <div class="mb-4">
+                    <label class="form-label fw-bold text-success">Tipo</label>
+                    <div class="form-check">
+                        <input class="form-check-input border-success" type="radio" asp-for="Tipo" value="D" id="tipoDespesa" />
+                        <label class="form-check-label text-success" for="tipoDespesa">Despesa</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input border-success" type="radio" asp-for="Tipo" value="R" id="tipoReceita" />
+                        <label class="form-check-label text-success" for="tipoReceita">Receita</label>
+                    </div>
+                    <span asp-validation-for="Tipo" class="text-danger"></span>
+                </div>
+
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-success btn-lg me-2">Salvar</button>
+                    <button type="button" class="btn btn-outline-success btn-lg" onclick="Voltar()">Cancelar</button>
+                </div>
+            </form>
         </div>
     </div>
-</form>
+</div>
 
 <script>
-    function Voltar(){
-        window.location.href = "../PlanoConta/Index"
+    function Voltar() {
+        window.location.href = "../PlanoConta/Index";
     }
 </script>
