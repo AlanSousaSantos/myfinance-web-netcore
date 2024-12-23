@@ -3,15 +3,7 @@
 O **MyFinance** é um projeto voltado para a gestão de finanças pessoais. 
 Desenvolvido como parte do curso de Pós-Graduação em Engenharia de Software da PUC Minas, o sistema tem como objetivo simplificar a organização financeira, permitindo o controle de receitas, despesas e planejamento financeiro.
 
-O projeto utiliza as boas práticas da **Clean Architecture**, que assegura:
-- Um código modular e de fácil manutenção.
-- Separação clara de responsabilidades entre as camadas:
-  - **Camada de Aplicação**: Implementação das regras de negócio específicas.
-  - **Camada de Domínio**: Regras genéricas e entidades que representam o núcleo do negócio.
-  - **Camada de Infraestrutura**: Integração com banco de dados e outros serviços.
-  - **Camada de Interface**: Apresentação utilizando **ASP.NET MVC**.
-
-O sistema foi construído com **.NET Core** e um banco de dados **SQL Server**, aproveitando recursos como a injeção de dependência e o Entity Framework Core para um desenvolvimento robusto e escalável.
+O sistema foi construído com **.NET Core** e um banco de dados **SQL Server**.
 
 ---
 
@@ -64,6 +56,6 @@ Mantenha um histórico detalhado das suas transações financeiras, incluindo da
 1. Configure a string de conexão no arquivo `appsettings.json`:
    ```json
    "ConnectionStrings": {
-       "DefaultConnection": "Server=localhost;Database=MyFinanceDb;Trusted_Connection=True;"
+       "DefaultConnection": "Server=localhost;Database=myfinance;User Id=sa;Password=Password2024$@;TrustServerCertificate=True"
    }
 
